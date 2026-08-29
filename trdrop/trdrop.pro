@@ -53,8 +53,13 @@ windows: LIBS += -L$(OpenCV_DIR)\build_64\install\x64\mingw\lib \
 
 
 # openmp support to allow parallelism
-LIBS += -lomp -L/opt/homebrew/opt/libomp/lib
-QMAKE_CXXFLAGS += -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include
+macx {
+    LIBS += -lomp -L/opt/homebrew/opt/libomp/lib
+    QMAKE_CXXFLAGS += -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include
+} else {
+    LIBS += -fopenmp
+    QMAKE_CXXFLAGS += -fopenmp
+}
 
 
 SOURCES += \
@@ -108,3 +113,7 @@ HEADERS += \
 
 
 RC_ICONS = images/trdrop_logo_alpha_wide_contour.ico
+
+macx {
+    ICON = images/trdrop_logo_alpha_wide_contour.icns
+}
