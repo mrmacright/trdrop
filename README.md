@@ -3,8 +3,8 @@
     <img height="100" src="images/logos/trdrop_logo_alpha.png">
 </p>
 
-# trdrop - v1.1.1
-###### ˈtɛr-dɹɑp - a raw video analysis program
+# trdrop - v1.1.1 (Mac port)
+###### trdrop - a raw video analysis program
 
 ## Examples
 
