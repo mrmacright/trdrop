@@ -13,8 +13,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 # OpenCV
-unix: INCLUDEPATH += /usr/local/include/opencv4
-unix: LIBS += -L/usr/local/lib \
+unix: INCLUDEPATH += /opt/homebrew/opt/opencv@4/include/opencv4
+unix: LIBS += -L/opt/homebrew/opt/opencv@4/lib \
         -lopencv_calib3d \
         -lopencv_core \
         -lopencv_dnn \
@@ -53,8 +53,8 @@ windows: LIBS += -L$(OpenCV_DIR)\build_64\install\x64\mingw\lib \
 
 
 # openmp support to allow parallelism
-LIBS += -fopenmp
-QMAKE_CXXFLAGS += -fopenmp
+LIBS += -lomp -L/opt/homebrew/opt/libomp/lib
+QMAKE_CXXFLAGS += -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include
 
 
 SOURCES += \
