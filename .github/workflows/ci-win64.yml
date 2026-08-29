@@ -51,7 +51,6 @@ jobs:
           version: ${{ env.qtver }}
           arch: win64_mingw81
           dir: C:\
-          tools: tools_ifw,4.1.1,qt.tools.ifw.41 tools_qtcreator,5.0.2-0,qt.tools.qtcreator,qt.tools.
 
       - name: Add Qt and MinGW to environment variable
         run: |
